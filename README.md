@@ -27,27 +27,26 @@ This feature is cool, but itself it doesn't allow one to build truly open plugin
 Safe, but less flexible.
 
 But you never know, it is sometimes worth of try undocummented things. Loading control/component dynamically with Blazor I tried some 2 years ago with no luck.
-So I tried again, being stubborn like old dog.
+So I tried again, being stubborn like an old dog.
 Simple thing it is to load type in runtime from assembly file using mighty reflection.
 
-And it works from very first moment.
-Clearly I was missing that <DynamicComponent> enabler.
+And it had worked from the very first moment!
+Clearly, I was missing that <DynamicComponent> enabler.
 Was I surprised? Honestly, not too much, after first five seconds of excitement I told to myself "well, it is logical it works".
 My compliments folks.
 
 Conclusion? Blazor server app and Blazor class libraries are allowing to build comprehensive and consistent plugin architecture software.
-Moreover, it adds few nice benefits:
+Moreover, they add few nice benefits:
 - modern type-safe, compiled fast language of choice, mine is C# 7, .NET Core
 - coherent packaged DLLs containing UI as well as backend, simple packaging
 - easy to implement type safety mechanisms like interface defined components
 - easy to implement security mechanisms like signing etc.
 - super simple debugging
 - easily extensible by unified logging, exception handling etc...
+- cool profiling options
 
 So I prepared very simple demo for curious readers.
 
-Please be aware the code is provided as is, as long the feature (or property) is not officially documented use on your own responsibility.
-I will do my best to confirm this is officially supported as soon as possible.
 
 # What's inside
 - DynamicComponentDemo - Blazor server app demonstrating runtime injected dynamic component 
@@ -74,3 +73,7 @@ Follow these steps:
 - build both projects
 - copy DynamicComponent\* into target directory of demo app (DynamicComponentDemo\bin\Debug\net7.0)
 - run demo app, you shall see dynamic component renderred
+
+# Disclaimer
+Please be aware the code is provided as is, as long as the use case is yet not officially documented, use it on your own responsibility.
+I will do my best to confirm this is officially supported as soon as possible.
