@@ -14,17 +14,17 @@ The closest to ideal is React/Angular frontend + .NET backend, but it still has 
 
 First of all, even if using TypeScript with React,
 generally it generates package which is loosely coupled with its backend counterpart. Not talking about NPM package hell, which we all have experienced for sure.
-Non coherent packaging can be sorted out using other packaging techniques or completely omitting backend part.
-Which is definitely valid strategy, even though I'm not fan of serverless web apps.
+Non coherent packaging can be sorted out using other packaging techniques or by completely omitting backend part.
+Which is definitely valid strategy, even though I'm not fan of serverless web apps for multiple reasons (we could have tense discussions :) ).
 
-Above summary is to some extent opiniated judgement, hope you can agree achieving robust plugin architecture with .NET for web apps is not that easy.
+Above summary is to some extent opiniated judgement, hope dear reader could agree achieving robust plugin architecture with .NET for web apps is not that easy.
 
 This has changed quite recently.
 
 Article [Dynamically-rendered ASP.NET Core Razor components](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/dynamiccomponent?view=aspnetcore-7.0)
 is dated to Jan 2023 and I believe it is a game changer.
-It describes programmatic way how to embed Blazor components dynamically. Definitely great feature.
-All you need is to specify type of component as a parameter of <DynamicComponent> component and optionally dynamic component parameters.
+It describes programmatic way of how to embed Blazor components dynamically. Definitely great feature.
+All you need is to specify type of component as a parameter of `<DynamicComponent>` component and optionally dynamic component parameters.
 
 This feature is cool, but itself it doesn't allow one to build truly open plugin architecture, since types has to be resolvable during compile time.
 Safe, but less flexible.
@@ -34,7 +34,7 @@ So I tried again, being stubborn like an old dog.
 Simple thing it is to load type in runtime from assembly file using mighty reflection.
 
 And it had worked from the very first moment!
-Clearly, I was missing that <DynamicComponent> enabler.
+Clearly, I was missing that `<DynamicComponent>` enabler.
 Was I surprised? Honestly, not too much, after first five seconds of excitement I told to myself "well, it is logical it works".
 My compliments folks.
 
@@ -73,9 +73,9 @@ First exception caused by missing file is swallawed, so the app will fail when t
 
 ## Prove it works
 Follow these steps:
-- build both projects
-- copy DynamicComponent\* into target directory of demo app (DynamicComponentDemo\bin\Debug\net7.0)
-- run demo app, you shall see dynamic component renderred
+- build both projects in `Debug` configuration
+- copy `DynamicComponent\bin\Debug\net7\*` files into target directory of demo app `DynamicComponentDemo\bin\Debug\net7.0`
+- run demo app, you shall see dynamic component renderred and well reacting to button clicks
 
 # Disclaimer
 Please be aware the code is provided as is, as long as the use case is yet not officially documented, use it on your own responsibility.
