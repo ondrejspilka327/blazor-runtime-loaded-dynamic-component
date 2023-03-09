@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Components.Web;
+
+<h3>Dynamic component</h3>
+<b>Hola, it is me, the component!</b>
+
+<button @onclick=onCounterAdvance>Click me!</button>
+<div>@message</div>
+
+
+@code {
+    public string message { get; set; } = "";
+    public int counter { get; set; } = 0;
+
+    [Parameter]
+    public EventCallback<int> OnRefresh { get; set; }
+
+    async Task onCounterAdvance()
+    {
+        //example render when counter is changed
+        counter++;
+        message = $"Hey you clicked {counter} times";
+
+        //call parent to signal event happened
+        await OnRefresh.InvokeAsync(counter);
+        await Task.CompletedTask;
+    }
+}

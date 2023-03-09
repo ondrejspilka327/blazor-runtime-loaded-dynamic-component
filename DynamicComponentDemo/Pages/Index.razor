@@ -1,0 +1,13 @@
+﻿@page "/"
+
+<PageTitle>Truly pluggable Blazor dynamic components demo</PageTitle>
+
+
+<div>
+    <h3>Parent context</h3>
+    <b>Received child component value: @receivedValue</b>
+</div>
+
+
+<DynamicComponent Type="@customPageType" @ref="dcRef" Parameters="ComponentParameters" />
+
