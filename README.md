@@ -19,7 +19,8 @@ Which is definitely valid strategy, even though I'm not fan of serverless web ap
 
 Above summary is to some extent opiniated judgement, hope you can agree achieving robust plugin architecture with .NET for web apps is not that easy.
 
-This has changed quite recently. Article https://learn.microsoft.com/en-us/aspnet/core/blazor/components/dynamiccomponent?view=aspnetcore-7.0 
+This has changed quite recently.
+Article https://learn.microsoft.com/en-us/aspnet/core/blazor/components/dynamiccomponent?view=aspnetcore-7.0 
 is dated to Jan 2023. It describes programmatic way how to embed Blazor components dynamically. Definitely great feature.
 All you need is to specify type of component as a parameter of <DynamicComponent> component and optionally dynamic component parameters.
 
