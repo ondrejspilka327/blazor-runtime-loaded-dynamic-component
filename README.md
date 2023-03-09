@@ -3,12 +3,16 @@ Demo of pluggable (truly runtime loaded) Blazor dynamic component.
 
 # Motivation
 I am somehow fascinated when I experience well built plugin architecture software in real life.
+
 On the other hand, it is nothing unusual nowadays, examples are ranging from IDEs and editors (VSCode is the shining example),
 thorugh o(O)ffice suites, CRMs, ERPs, SCADA systems, up to BI tools like PowerBI, and you would find hundreds of others.
+
 And frankly I was always admiring architects and developers who were able to not only implement such a systems, but also to keep safety and quality in place for many years.
 Plugin architectures are no exception to any technology, however with .NET it was always a bit of struggle especially on web side of things.
 I believe it is because of fact that most .NET web technologies up to date were not coherent in terms on backed and frontend code.
-The closest to ideal is React/Angular frontend + .NET backed, but it still has some drawbacks. First of all, even if using TypeScript with React,
+The closest to ideal is React/Angular frontend + .NET backend, but it still has some drawbacks.
+
+First of all, even if using TypeScript with React,
 generally it generates package which is loosely coupled with its backend counterpart. Not talking about NPM package hell, which we all have experienced for sure.
 Non coherent packaging can be sorted out using other packaging techniques or completely omitting backend part.
 Which is definitely valid strategy, even though I'm not fan of serverless web apps.
@@ -25,13 +29,14 @@ Safe, but less flexible.
 But you never know, it is sometimes worth of try undocummented things. Loading control/component dynamically with Blazor I tried some 2 years ago with no luck.
 So I tried again, being stubborn like old dog.
 Simple thing it is to load type in runtime from assembly file using mighty reflection.
+
 And it works from very first moment.
 Clearly I was missing that <DynamicComponent> enabler.
-Was I surprised? Honestly not too much, after first five seconds of excitement I told to myself "well it is logical it works".
+Was I surprised? Honestly, not too much, after first five seconds of excitement I told to myself "well, it is logical it works".
 My compliments folks.
 
 Conclusion? Blazor server app and Blazor class libraries are allowing to build comprehensive and consistent plugin architecture software.
-Moreover it adds few nice benefits:
+Moreover, it adds few nice benefits:
 - modern type-safe, compiled fast language of choice, mine is C# 7, .NET Core
 - coherent packaged DLLs containing UI as well as backend, simple packaging
 - easy to implement type safety mechanisms like interface defined components
@@ -41,6 +46,8 @@ Moreover it adds few nice benefits:
 
 So I prepared very simple demo for curious readers.
 
+Please be aware the code is provided as is, as long the feature (or property) is not officially documented use on your own responsibility.
+I will do my best to confirm this is officially supported as soon as possible.
 
 # What's inside
 - DynamicComponentDemo - Blazor server app demonstrating runtime injected dynamic component 
